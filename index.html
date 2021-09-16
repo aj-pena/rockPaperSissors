@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+
+        function play() {
+        
+        let wins =0;
+        let looses =0;
+        let ties =0;
+        // Are you ready?
+        window.alert("Are you ready to play Rock-Paper-Scissors?");
+        // Choose 
+        let choice = window.prompt("Enter 'R' for rock, 'P' for paper or 'S' for scissors.");
+        console.log(choice.toLowerCase());
+        // Computer chooses, 1 = rock, 2 = scissors, 3 = paper
+        let pc = Math.floor(Math.random()*3);
+
+        // Comparing choices and pc
+        if (pc === 1 && choice.toLocaleLowerCase() == "s" ){
+            looses ++;
+        }else if (pc === 1 && choice.toLocaleLowerCase() == "r" ) {
+            ties ++;
+        } else if (pc === 1 && choice.toLocaleLowerCase() == "p") {
+            wins ++;
+        }else if (pc === 2 && choice.toLocaleLowerCase() == "r"){
+            looses ++;
+        }else if (pc === 2 && choice.toLocaleLowerCase() == "s"){
+            ties ++;
+        }else if (pc === 2 && choice.toLocaleLowerCase() == "p"){
+            wins++;
+        }else if (pc === 3 && choice.toLocaleLowerCase() == "s"){
+            looses ++;
+        }else if (pc === 3 && choice.toLocaleLowerCase() == "p"){
+            ties ++;
+        }else {
+            wins ++;
+        }
+        //Announce results
+        
+        if(looses ++){
+            window.alert("Sorry, you've lost :(", wins, ties, looses);
+        }else if(ties ++){
+            window.alert("Is a tie! :O", wins, ties, looses);
+        }else {
+            window.alert("You've won! :D", wins, ties, looses);
+        }         
+        
+
+        }
+        // Would you like to play again?
+        
+        let again = window.confirm("Would you like to play again?");
+        if(again){
+            play();
+        }else {
+            console.log("Thanks for playing!")
+            return;
+        }
+        
+
+    </script>
+
+</body>
+</html>
